@@ -1,0 +1,18 @@
+<h2 class="page-header">Search Authors</h2>
+<form action="/authors" method="get">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= searchOptions.author %> ">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% authors.forEach((author) => { %>
+    <div class="author-element"> <%= author.author %></div>
+    <div class="btn-row">
+        <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
+        <a class="btn btn-primary" href="/authors/<%=  author.id %>/edit">Edit</a>
+        <%- include('../partials/delete-form.ejs', 
+                    { url: `/authors/${author.id}` }) %> 
+        <% }) %>
+    </div>
+
+ 

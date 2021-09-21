@@ -1,0 +1,14 @@
+<h2 class="page-header"><%= book.title %></h2>
+
+<img src="<%= book.coverImagePath %>" alt="<%= book.title %> Cover">
+<div>Author: <%= book.author.author %> </div>
+<div>Publish Date: <%= book.publishedDate.toDateString() %> </div>
+<div>Page Count: <%= book.pageCount %> </div>
+<div>Description: <%= book.description %> </div>
+<div class="btn-row">
+    <a class="btn btn-primary" href="/authors/<%= book.author.id %>">View Author</a>
+    <a class="btn btn-primary" href="/books/<%= book.id %>/edit">Edit</a>
+    <%- include('../partials/delete-form.ejs', {
+        url: `/books/${book.id}`}) %> 
+</div>
+    

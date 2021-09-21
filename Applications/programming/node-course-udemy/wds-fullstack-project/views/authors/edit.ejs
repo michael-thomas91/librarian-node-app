@@ -1,0 +1,9 @@
+<h2 class="page-header">Edit Author</h2>
+
+<form action="/authors/<%= author.id %>?_method=PUT" method="post">
+    <%- include('./_form-fields') %>
+    <a href="/authors/<%= author.id %>">Cancel</a>
+    <button type="submit">Edit</button>
+    <%- include('../partials/delete-form.ejs', 
+                    { url: `/authors/${author.id}` }) %>
+</form>

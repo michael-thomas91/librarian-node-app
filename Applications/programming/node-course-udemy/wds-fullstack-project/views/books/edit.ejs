@@ -1,0 +1,21 @@
+<img src="<%= book.coverImagePath %>" alt="<%= book.title %> Cover">
+
+<form action="/books/<%= book.id %>?_method=PUT" method="post">
+    <div>
+        <label>Title</label>
+        <input type="text" name="title" value="<%= book.title %>">
+    </div>
+    <div>
+        <label>Date Published</label>
+        <input type="date" name="publishedDate" value="<%= book.publishedDate %>">
+    </div>
+    <div>
+        <label>Page Count</label>
+        <input type="number"  name="pageCount" value="<%= book.pageCount %>">
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea rows="10" cols="30" name="description" value="<%= book.description %>"></textarea>
+    </div>
+    <button type="submit">Update</button>
+</form>
